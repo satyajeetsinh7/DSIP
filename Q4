@@ -1,0 +1,19 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+def unit_step(n):
+    u = np.zeros_like(n)
+    u[n>=0] = 1
+    return u
+
+n = np.arange(-2,11)
+
+x = unit_step(n) - unit_step(n-3) - 5*unit_step(n-7)
+
+plt.figure(figsize=(8,4))
+plt.stem(n,x)
+plt.title('Signal 4')
+plt.xlabel('n')
+plt.ylabel('Amplitude')
+plt.grid()
+plt.show()
