@@ -1,0 +1,17 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+def generate_signal():
+    n = np.arange(-3, 7)
+    x = np.array([2,3,2,3,2,3,2,3,2,3])
+    return n, x
+
+n, x = generate_signal()
+
+plt.figure(figsize=(8,4))
+plt.stem(n, x)
+plt.title('Signal 1')
+plt.xlabel('n')
+plt.ylabel('Amplitude')
+plt.grid()
+plt.show()
