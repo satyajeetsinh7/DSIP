@@ -1,0 +1,19 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+def impulse(n):
+    d = np.zeros_like(n)
+    d[n==0] = 1
+    return d
+
+n = np.arange(-3,4)
+
+x = impulse(n) + 3*impulse(n-1) + 5*impulse(n+1)
+
+plt.figure(figsize=(8,4))
+plt.stem(n,x)
+plt.title('Signal 5')
+plt.xlabel('n')
+plt.ylabel('Amplitude')
+plt.grid()
+plt.show()
